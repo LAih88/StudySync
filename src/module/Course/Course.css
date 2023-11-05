@@ -138,3 +138,10 @@ body {
       background: linear-gradient(to bottom right, #000000 -200%, darkgrey -100%, #000000 0%, darkgrey 100%);
     }
   }
+
+  #no_course_page {
+    text-align: center;
+    margin-top: 400px;
+    font-size: 40px;
+    font-weight: 600;
+  }

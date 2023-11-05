@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import Lecture from "../Lecture/Lecture"
 import "./Node.css"
 

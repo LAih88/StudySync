@@ -5,6 +5,8 @@
     width: 250px;
     height: 200px;
     box-shadow: 2px 3px 6px rgb(150, 150, 150);
+    text-decoration: none;
+    color: black;
 }
 
 .block_img_container {

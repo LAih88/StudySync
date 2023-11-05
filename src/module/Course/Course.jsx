@@ -4,6 +4,7 @@ import Concept from "../Concept/Concept"
 import Note from "../Note/Note"
 import Tool from "../Tool/Tool"
 import Problem from "../Problem/Problem"
+import Term from "../Term/Term"
 import "./Course.css"
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
 
@@ -49,10 +50,11 @@ export default class Course extends React.Component {
                 </div>
                 <div id="course_content">
                   <Switch>
-                    <Route path={"/course/"+this.data.name+"/concepts"} component={Concept}/>
-                    <Route path={"/course/"+this.data.name+"/notes"} component={Note}/>
-                    <Route path={"/course/"+this.data.name+"/tools"} component={Tool}/>
-                    <Route path={"/course/"+this.data.name+"/problems"} component={Problem}/>
+                    <Route exact path={"/course/"+this.data.name+"/concepts"} component={Concept}/>
+                    <Route exact path={"/course/"+this.data.name+"/problems"} component={Problem}/>
+                    <Route exact path={"/course/"+this.data.name+"/notes"} component={Note}/>
+                    <Route exact path={"/course/"+this.data.name+"/tools"} component={Tool}/>
+                    <Route path={"/course/"+this.data.name+"/concepts/"} component={Term}/>
                     <Redirect to={"/course/"+this.data.name+"/concepts"}></Redirect>
                   </Switch>
                 </div>
@@ -61,7 +63,7 @@ export default class Course extends React.Component {
         } else {
           return (
             <div id="course_page">
-
+              <p id="no_course_page">Wrong URL! Please go to the homepage!</p>
             </div>
           );
         }

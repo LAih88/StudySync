@@ -42,7 +42,7 @@ export default class Home extends React.Component {
                     </div>
                     <div id="home_form">
                         <form onSubmit={this.search}>
-                            <input id="home_seach" type="text" placeholder="ECE291" ref={node=>this.home_search=node}/>
+                            <input id="home_seach" type="text" placeholder="MAT291" ref={node=>this.home_search=node}/>
                             <button id="home_button" type="submit"></button>
                         </form>
                     </div>

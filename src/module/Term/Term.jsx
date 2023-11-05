@@ -1,9 +1,8 @@
 import React from "react"
-import "./Concept.css"
-import {Link} from "react-router-dom"
+import "./Term.css"
 
 
-export default class Concept extends React.Component {
+export default class Term extends React.Component {
     database = [
         {
           id: 1,
@@ -48,26 +47,22 @@ export default class Concept extends React.Component {
 
     render() {
         let path = this.props.location.pathname.split("/");
-        let name = path[path.length-2];
+        let id = path[path.length-1];
+        let name = path[path.length-3];
         for (let i = 0; i < this.database.length; i++) if (this.database[i].name.toLowerCase() === name.toLowerCase()) this.data = this.database[i];
-        if (this.data.concept.length === 0) {
-          return (
-            <div id="concept_page">
-              <p id="concept_text">Terminology Dictionary</p>
-              <p id="no_concept_text">There is currently no terms</p>
-            </div>
-          );
-        }
+        let term = this.data.concept[id];
         return (
-            <div id="concept_page">
-              <p id="concept_text">Terminology Dictionary</p>
-              {this.data.concept.map(c=>{
-                return (
-                  <Link className="concept_link" to={"/course/"+this.data.name+"/concepts/"+c.id}>
-                    {c.name}
-                  </Link>
-                );
-              })}
+            <div id="term_page">
+                <p id="term_text">Terminology Dictionary</p>
+                <p id="term_name">{term.name}</p>
+                <p className="term_sub">Definition</p>
+                <p className="term_content">{term.definition}</p>
+                <p className="term_sub">Formula</p>
+                <div id="term_img_container"><img id="term_img" alt="formual" src={term.formula}/></div>
+                <p className="term_sub">Theorem</p>
+                <p className="term_content">{term.theorem}</p>
+                <p className="term_sub">Other External Links</p>
+                <a className="term_content" href={term.youtube}>YouTube Video</a>
             </div>
         );
     }

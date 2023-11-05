@@ -35,3 +35,8 @@
     background-color: black;
     color: white;
 }
+
+#note_bottom {
+    width: 100%;
+    height: 100px;
+}

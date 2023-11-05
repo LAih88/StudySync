@@ -3,6 +3,7 @@ import {NavLink, Route, Switch} from "react-router-dom"
 import Concept from "../Concept/Concept"
 import Note from "../Note/Note"
 import Tool from "../Tool/Tool"
+import Problem from "../Problem/Problem"
 import "./Course.css"
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
 
@@ -51,6 +52,7 @@ export default class Course extends React.Component {
                     <Route path={"/course/"+this.data.name+"/concepts"} component={Concept}/>
                     <Route path={"/course/"+this.data.name+"/notes"} component={Note}/>
                     <Route path={"/course/"+this.data.name+"/tools"} component={Tool}/>
+                    <Route path={"/course/"+this.data.name+"/problems"} component={Problem}/>
                     <Redirect to={"/course/"+this.data.name+"/concepts"}></Redirect>
                   </Switch>
                 </div>

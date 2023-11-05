@@ -46,6 +46,7 @@ export default class Note extends React.Component {
                     <form id="note_form">
                         <button type="submit" id="note_submit">Submit Lecture Notes</button>
                     </form>
+                    <div id="note_bottom"></div>
                 </div>
             );
         } else {

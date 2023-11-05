@@ -1,0 +1,37 @@
+#note_page {
+    margin: 60px auto 0 auto;
+    width: 60%;
+}
+
+#note_text {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#no_note_text {
+    margin-top: 300px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+#note_form {
+    margin: 100px auto 0 auto;
+    width: 300px;
+}
+
+#note_submit {
+    width: 300px;
+    height: 45px;
+    font-size: 25px;
+    font-weight: 600;
+    border: 2px solid black;
+    background-color: white;
+}
+
+#note_submit:hover {
+    transition-duration: 500ms;
+    background-color: black;
+    color: white;
+}

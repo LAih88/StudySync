@@ -1,0 +1,65 @@
+.circle_page {
+    float: left;
+    margin-left: 80px;
+    width: 150px;
+    height: 200px;
+}
+
+.tool_circle {
+    float: left;
+    display: flex;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    position: relative;    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    box-shadow: 0 0 5px darkgrey;
+    transition: transform 0.2s;
+}
+
+.tool_circle:hover {
+    transform: scale(1.2);
+}
+
+.tool_circle img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5%;
+}
+
+.tool_name {
+    left: 0;
+    bottom: -80px;
+    position: absolute;
+    text-align: center;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tool_circle::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid darkgrey;
+    border-radius: 50%;
+    animation: tool_circle_anime 2s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes tool_circle_anime {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
